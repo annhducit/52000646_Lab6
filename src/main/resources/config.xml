@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                      https://www.springframework.org/schema/beans/spring-beans.xsd
+                     http://www.springframework.org/schema/context
+                      http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="product" class="_Lab6_com.example.Lab06.Bai1.Product"/>
+    <bean id="product1" class="_Lab6_com.example.Lab06.Bai1.Product" scope="prototype">
+        <property name="name" value="Iphone"/>
+    </bean>
+    <bean id="product2" class="_Lab6_com.example.Lab06.Bai1.Product" scope="prototype">
+        <constructor-arg ref="product1"/>
+    </bean>
+    <bean id="product3" class="_Lab6_com.example.Lab06.Bai1.Product" scope="singleton">
+        <property name="name" value="Xbox"/>
+    </bean>
+    <bean id="pdfTextWriter" class="_Lab6_com.example.Lab06.Bai3.TextWriter" scope="prototype"/>
+    <bean id="textEditor" class="_Lab6_com.example.Lab06.Bai3.TextEditor" scope="prototype"/>
+</beans>
